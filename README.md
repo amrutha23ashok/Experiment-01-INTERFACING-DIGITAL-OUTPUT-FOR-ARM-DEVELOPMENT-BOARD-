@@ -78,13 +78,60 @@ The main features of LPC2148 include the following.
 
 
 
-## STM 32 CUBE PROGRAM :
+## STM 32 CUBE PROGRAM :```
+NAME:AMRUTHA.S.A
+REG NO:22007438
+```
+```
+#include "main.h"
+
+void SystemClock_Config(void); static void MX_GPIO_Init(void); void led();
+
+int main(void) {
+
+HAL_Init();
+
+SystemClock_Config();
+
+MX_GPIO_Init();
+
+while (1) { led();
+
+} /* USER CODE END 3 */ } void led() { HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET); HAL_Delay(3000); HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET); HAL_Delay(3000); }
+
+void SystemClock_Config(void) { RCC_OscInitTypeDef RCC_OscInitStruct = {0}; RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI; RCC_OscInitStruct.HSIState = RCC_HSI_ON; RCC_OscInitStruct.HSIDiv = RCC_HSI_DIV1; RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT; RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE; if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) { Error_Handler(); }
+
+RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK |RCC_CLOCKTYPE_PCLK1; RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI; RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1; RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
+if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK) { Error_Handler(); } }
+
+static void MX_GPIO_Init(void) { GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+__HAL_RCC_GPIOA_CLK_ENABLE();
+
+HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
+GPIO_InitStruct.Pin = GPIO_PIN_5; GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP; GPIO_InitStruct.Pull = GPIO_NOPULL; GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+}
+
+void Error_Handler(void) { }
+
+#ifdef USE_FULL_ASSERT
+
+void assert_failed(uint8_t *file, uint32_t line) {
+
+} #endif /* USE_FULL_ASSERT */
+```
 
 
 
 ## Output  :
  
- 
+ ![image](https://user-images.githubusercontent.com/119476247/227766798-151ac75f-3132-4b1a-bbc4-a8604814f9df.jpeg)
+ ![image](https://user-images.githubusercontent.com/119476247/227766807-8ccb76e2-d7b2-48cc-8fef-ae9ebd764232.jpeg)
  
  
 ## Result :
