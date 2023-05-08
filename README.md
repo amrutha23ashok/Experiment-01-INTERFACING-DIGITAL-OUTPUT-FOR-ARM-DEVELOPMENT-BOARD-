@@ -78,7 +78,8 @@ The main features of LPC2148 include the following.
 
 
 
-## STM 32 CUBE PROGRAM :```
+## STM 32 CUBE PROGRAM :
+```
 NAME:AMRUTHA.S.A
 REG NO:22007438
 ```
@@ -131,6 +132,7 @@ void assert_failed(uint8_t *file, uint32_t line) {
 ## Output  :
  
  ![image](https://user-images.githubusercontent.com/119476247/227766798-151ac75f-3132-4b1a-bbc4-a8604814f9df.jpeg)
+ 
  ![image](https://user-images.githubusercontent.com/119476247/227766807-8ccb76e2-d7b2-48cc-8fef-ae9ebd764232.jpeg)
  
  
